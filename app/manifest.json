@@ -1,0 +1,39 @@
+{
+  "name": "Mail Viewer",
+  "description": "View your Gmail inbox",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "icons": {
+    "16": "images/icon-16.png",
+    "128": "images/icon-128.png"
+  },
+  
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-38.png"
+    },
+    "default_title": "Mail viewer",
+    "default_popup": "index.html"
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "identity",
+    "https://ajax.googleapis.com/"
+  ],
+
+  "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+
+  "oauth2": {
+    "client_id": "1008509877640-ufh2fml5pjhj6ts22t7ljpl9r3e18mg4.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly"
+    ]
+  },
+
+  "web_accessible_resources": [
+    "partials/*.html"
+  ]
+}

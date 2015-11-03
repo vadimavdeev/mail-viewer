@@ -1,0 +1,14 @@
+{
+	"esnext": true,
+	"browserify": true,
+	"mocha": true,
+	"curly": true,
+	"eqeqeq": true,
+	"expr" : true,
+	"latedef": "nofunc",
+	"undef": true,
+	"unused": "vars",
+	"globals": {
+		"chrome": false
+	}
+}

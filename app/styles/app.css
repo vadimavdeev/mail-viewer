@@ -1,0 +1,97 @@
+html, body {
+	font-family: 'Roboto', sans-serif;
+	font-size:14px;
+}
+
+body {
+	width: 600px;
+	height: 480px;
+	overflow: hidden;
+}
+
+[ng-cloak] {
+	display: none !important;
+}
+
+#spinner-container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+}
+
+#spinner-container i {
+	font-size: 36px;
+	animation: rotating 1.2s linear infinite;
+}
+
+#main, #main-content {
+	overflow: hidden;
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
+}
+
+#main-content {
+	flex: 1 1 auto;
+}
+
+.emails-list {
+	flex: 1 1 auto;
+	overflow: auto;
+}
+
+md-toolbar.nested-toolbar {
+	min-height: 24px;
+	height: 32px;
+}
+
+.email-container p {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.email-container.unread .email-from,
+.email-container.unread .email-subject {
+	color: rgba(0,0,0,.87);
+}
+
+.email-container.unread .email-from {
+	font-weight: 700;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+.inline-button {
+	display: inline-block;
+	padding: 3px;
+	height: 24px;
+	line-height: 24px;
+	width: 24px;
+	cursor: pointer;
+}
+
+.material-icons.md-12 {
+	font-size: 16px;
+}
+
+@keyframes rotating {
+	from{
+		transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}

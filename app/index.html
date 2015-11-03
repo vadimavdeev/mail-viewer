@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Popup</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles/angular-material.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body ng-controller="AppCtrl as vm">
+
+  <div id="spinner-container" ng-hide="vm.initialized">
+    <i class="material-icons">cached</i>
+  </div>
+
+  <md-content id="main" ng-cloak>
+    <md-toolbar class="md-primary" flex="none">
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>Mail Viewer</span>
+        </h2>
+        <span class="flex"></span>
+        <md-button class="md-icon-button" aria-label="Open Gmail" ng-click="vm.openGmail()">
+          <md-icon class="material-icons md-18">open_in_new</md-icon>
+          <md-tooltip>Open Gmail</md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Close" ng-click="vm.closePopup()">
+          <md-icon class="material-icons md-18">close</md-icon>
+          <md-tooltip>Close popup</md-tooltip>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content id="main-content" ng-view>
+    </md-content>
+  </md-content>
+
+  <script type="text/javascript" src="bundle.js"></script>
+</body>
+</html>

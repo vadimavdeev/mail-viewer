@@ -1,0 +1,30 @@
+<md-toolbar class="md-primary md-hue-1 nested-toolbar" flex="none" layout="row" layout-align="end center">
+	<span class="flex"></span>
+	<md-button class="md-icon-button" aria-label="Previous page" ng-click="vm.prevPage()" ng-disabled="!vm.hasPrevPage()">
+		<md-icon class="material-icons md-18">chevron_left</md-icon>
+		<md-tooltip>Previous page</md-tooltip>
+	</md-button>
+	<md-button class="md-icon-button" aria-label="Next page" ng-click="vm.nextPage()" ng-disabled="!vm.hasNextPage()">
+		<md-icon class="material-icons md-18">chevron_right</md-icon>
+		<md-tooltip>Next page</md-tooltip>
+	</md-button>
+</md-toolbar>
+<md-list class="emails-list">
+	<md-list-item class="md-2-line" data-ng-repeat="message in vm.messages | orderBy: '-internalDate'">
+		<div class="md-list-item-text email-container" ng-class="{unread: message.unread}" layout="column">
+			<div>
+				<h4 class="email-from pull-left">{{message.headers.From}}</h4>
+				<p class="pull-right" am-time-ago="message.headers.Date"></p>
+			</div>
+			<p class="email-subject">{{message.headers.Subject}}</p>
+			<div layout="row" layout-align="space-between center">
+				<p>{{message.snippet}}</p>
+				<span class="inline-button" aria-label="Open Gmail" ng-click="vm.openInGmail(message.id)">
+					<i class="material-icons md-12">open_in_new</i>
+					<md-tooltip>Open in Gmail</md-tooltip>
+				</span>
+			</div>
+		</div>
+		<md-divider ng-if="!$last"></md-divider>
+	</md-list-item>
+</md-list>
